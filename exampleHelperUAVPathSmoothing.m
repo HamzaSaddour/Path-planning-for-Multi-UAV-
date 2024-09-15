@@ -13,7 +13,7 @@ startNode=1;
 endNode=startNode+1;
 counter=counter+1;
 lastNonCollisionNode=endNode;
-while(endNode<=length(nonSmoothWaypoints))
+while(endNode<=size(nonSmoothWaypoints,1))
     MotionValid=isMotionValid(sv,nonSmoothWaypoints(startNode,:),nonSmoothWaypoints(endNode,:));
     collide=~MotionValid;
     if(~collide)

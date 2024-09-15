@@ -48,14 +48,17 @@ classdef MyCustomStateSpace < nav.StateSpace & ...
         % a) Use the constructor to set the name of the state space, the
         %    number of state variables, and to define its boundaries.
         %
-        function obj = MyCustomStateSpace
+        function obj = MyCustomStateSpace(stateBounds)
 
             spaceName = "MyCustomStateSpace";
             numStateVariables = 3;
 
             % For each state variable define the lower and upper valid
             % limit (one [min,max] limit per row)
-            stateBounds = [-300 300; -300 300; 0 200];
+    %         stateBounds = [-300 300; -300 300; 0 200];
+    %         stateBounds =[-100 100;
+    % -150 0;
+    % 70 200];
             
         
             % Call the constructor of the base class
