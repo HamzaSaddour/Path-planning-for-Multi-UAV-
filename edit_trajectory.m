@@ -35,7 +35,7 @@ paths=paths_(:,UAV:end); %only checking with uav x to n
 %%
 
 % safety_distance=20;
-rad=safety_distance;%20
+rad=safety_distance+2;%20
 
 % [collision,obstcles_pos,list_0_1]= detect_collision (waypoints,safety_distance); %obstcles_pos is positions of the other UAV that causes a danger
 step_distance= time_step*UAV_speed;
@@ -173,8 +173,8 @@ end
 seg
 start_goal_list
 
-hold on
-l=scatter3(start_goal_list(:,1),start_goal_list(:,2),start_goal_list(:,3),'cyan','filled','o','DisplayName', 'Start-End',SizeData=100);
+% hold on
+% l=scatter3(start_goal_list(:,1),start_goal_list(:,2),start_goal_list(:,3),'cyan','filled','o','DisplayName', 'Start-End',SizeData=100);
 % legend([l])
 
 %new_traj_UAV=UAV1_waypoints;

@@ -1,6 +1,6 @@
-function distance = trajectory_distance(trajet)
-waypoints = trajet.States;
-nWayPoints = trajet.NumStates;
+function distance = trajectory_distance(waypoints)
+%waypoints = trajet.States;
+nWayPoints = size(waypoints,1);
 
 % Calculate the distance between waypoints
 distance = 0;

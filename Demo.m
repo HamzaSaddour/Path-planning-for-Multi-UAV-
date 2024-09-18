@@ -1,28 +1,28 @@
 %demo
 %loading the 3D occupancy map
-a=load("C:\Users\hs3223\Desktop\Project\code\maps\ICL_inflated_10.mat");%a=load("C:\Users\hs3223\Desktop\Project\code\maps\NYC_05_inflated10.mat"); % 
+addpath('PathPlanning');
+a=load("map\ICL_inflated_10.mat");%a=load("maps\NYC_05_inflated10.mat"); % 
 map3D=a.map3D_t;
 map3D.OccupiedThreshold = 0.51; 
 map3D.FreeThreshold = 0.5;
+safety_distance=20;
 
 %loading the UAV scenario
-a=load("C:\Users\hs3223\Desktop\Project\code\maps\ICL_scene.mat");%a=load("C:\Users\hs3223\Desktop\Project\code\maps\NYC_scene.mat");
+a=load("map\ICL_scene.mat");%a=load("maps\NYC_scene.mat");
 scene=a.scene;
-figure;
-show3D(scene);
 
 %selecting sart and goal poitions 
 map_limits= [-300 300; -300 300; 50 200];
 
 %uav number and start-goal positions 
 starting_altitude=70;
-start_goal = get_start_goal(scene,map3D);
+start_goal = get_start_goal(scene,map3D,safety_distance);
 
 adjusted_start_goal=start_goal;
 for i = 1:size(start_goal,1)
     adjusted_start_goal(i,3)=max(adjusted_start_goal(i,3),starting_altitude);
 end
-safety_distance=20;
+
 colors =['red','m','b','y','c','g',"white","black"];%[57 -80 20 ; -25 -222 100],
 nb_UAVs=floor(size(adjusted_start_goal,1)/2);%
 UAVs_speed= 20*ones(nb_UAVs,1);%[2;2;2;2;2];
@@ -30,7 +30,7 @@ time_step= 0.01;%safety_distance/min(UAVs_speed);
 uav_radius=10;
 
 %planning initial paths for all the UAVs
-%%
+
 tic
 
 paths={};
@@ -74,12 +74,12 @@ for i = 1:nb_UAVs
 end
 legend([l(:); t(:)]);
 planning_time=toc
-
 %plotting seperatio plot - Initial
 
 waypoints = get_waypoints(paths);
 numUAVs = size(waypoints, 2) / 3;
 numTimeSteps = size(waypoints, 1);% Number of time steps
+hold off
 
 % Initialize a figure
 figure;
@@ -94,7 +94,7 @@ for i = 1:numUAVs
         % Calculate the Euclidean distance between UAV i and UAV j at each time step
         distances = sqrt(sum((uav_i_coords - uav_j_coords).^2, 2));
         % Plot the distances
-        if (1) %min(distances)<50
+        if (1)% min(distances)<50
             t=linspace(0,time_step*length(distances),length(distances))';
             plot(t,distances, 'LineWidth', 2,'DisplayName', sprintf('UAV %d & UAV %d', i, j));
         end
@@ -112,7 +112,7 @@ grid on;
 hold off;
 
 %editing paths 
-
+%% 
 waypoints = get_waypoints(paths);
 e_paths=paths;
 e_distance={};
@@ -139,7 +139,7 @@ all_over= planning_time+editing_time
 %plotting results
 
 
-figure;
+figure(3);
 show3D(scene);
 view([0 90])
 hold on
@@ -168,12 +168,13 @@ for i = 1:nb_UAVs
         "LineWidth",2,"Color",colors(mod(i,8)+1),'DisplayName', strcat('UAV ', int2str(i)) );
 end
 legend([l(:)]);
-
+ view([0 90])
+ title('Final Paths');
 %plotting results 2
 
-figure;
+figure(4);
 show3D(edited_scene);%edited_scene
-
+ view([0 90])
 axis equal
 hold on
 
@@ -185,7 +186,8 @@ for i = 1:nb_UAVs
         "LineWidth",2,"Color",colors(mod(i,8)+1),'DisplayName', strcat('UAV ', int2str(i)) );
 end
 legend([l(:)]);
-
+ view([0 90])
+  title('Edited Paths with Pseudo-Obstacles');
 %% plotting seperatio plot - Edited
 
 waypoints = get_waypoints(e_paths);
@@ -193,7 +195,7 @@ numUAVs = size(waypoints, 2) / 3;
 numTimeSteps = size(waypoints, 1);% Number of time steps
 
 % Initialize a figure
-figure;
+figure(5);
 hold on;
 view([0 90])
 for i = 1:numUAVs
@@ -223,3 +225,20 @@ ylim ([0 100]);
 grid on;
 hold off;
 
+%%
+for i = 1:5
+    figure(i); % Create figure i
+    % Set the position of the figure window (left, bottom, width, height)
+    switch i
+        case 1
+            set(gcf, 'Position', [100, 500, 400, 300]); % Figure 1 position and size
+        case 2
+            set(gcf, 'Position', [500, 500, 600, 300]); % Figure 2
+        case 3
+            set(gcf, 'Position', [1100, 500, 400, 300]); % Figure 3
+        case 4
+            set(gcf, 'Position', [100, 100, 400, 300]); % Figure 4
+        case 5
+            set(gcf, 'Position', [600, 100, 600, 300]); % Figure 5
+    end
+end

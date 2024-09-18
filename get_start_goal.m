@@ -1,5 +1,5 @@
-function start_goal = get_start_goal(scene,map)
-figure
+function start_goal = get_start_goal(scene,map,safety_distance)
+figure(1)
 show3D(scene);
 view([0 90]);
 % altitude=starting_altitude;
@@ -47,7 +47,7 @@ for i = 1:2*N
     plot3(x, y, altitude,'bo', 'MarkerFaceColor', c(mod(i,2)+1)); % Plot the point
     sg = [sg;x y altitude+5];
     % Draw a semi-transparent red disk around the point
-    radius = 10; % Set the radius of the disk
+    radius= safety_distance; % Set the radius of the disk
     theta = linspace(0, 2*pi, 100); % Parameter for the circle
     x_circle = radius * cos(theta) + x;
     y_circle = radius * sin(theta) + y;

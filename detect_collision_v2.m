@@ -34,7 +34,7 @@ for i= 1:time_steps %for every time step
 
             pos = reshape(waypoints(i,4:end),3,[])'; %getting the positions of all the uav at that time step with a collision //nb_uavs-1
             distances=vecnorm(pos-waypoints(i,1:3),2,2); % get the distances from the point of collision to all uavs 
-            pos=pos(distances<2*safety_distance,:); %take into consideration only the uavs within the sphere of a radius 2*safety distance
+            pos=pos(distances<3*safety_distance,:); %take into consideration only the uavs within the sphere of a radius 2*safety distance
             obstcles_pos=[obstcles_pos;pos]; 
             % l(2)=scatter3(pos(:,1),pos(:,2),pos(:,3),'black','filled','o','DisplayName', 'Psedo obstacles positions',SizeData=100);
             break
