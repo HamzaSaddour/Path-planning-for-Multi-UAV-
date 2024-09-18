@@ -1,14 +1,14 @@
 %demo
 %loading the 3D occupancy map
 addpath('PathPlanning');
-a=load("map\ICL_inflated_10.mat");%a=load("maps\NYC_05_inflated10.mat"); % 
+a=load("ICL_inflated_10.mat");%a=load("maps\NYC_05_inflated10.mat"); % 
 map3D=a.map3D_t;
 map3D.OccupiedThreshold = 0.51; 
 map3D.FreeThreshold = 0.5;
 safety_distance=20;
 
 %loading the UAV scenario
-a=load("map\ICL_scene.mat");%a=load("maps\NYC_scene.mat");
+a=load("ICL_scene.mat");%a=load("maps\NYC_scene.mat");
 scene=a.scene;
 
 %selecting sart and goal poitions 
