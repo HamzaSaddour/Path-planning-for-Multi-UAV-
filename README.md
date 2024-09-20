@@ -120,7 +120,6 @@ I would like to express my gratitude to Dr Martina Sciola and Dr Roberto Valenti
 this project. Special thanks to all contributors and supporters who made this project possible.
 
 ## Copyright Declaration and License 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.\\
 The copyright of this project rests with the author and is made available under a [Creative Commons Attribution Non-Commercial No Derivatives](https://creativecommons.org/licenses/by-nc-nd/4.0/) license. Researchers are free to copy, distribute, or transmit the work under the following conditions:
 
 - **Attribution**: You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so reasonably, but not in any way that suggests the author endorses you or your use.
@@ -135,4 +134,4 @@ Additionally, this project is licensed under the [BSD 2-Clause License](LICENSE)
   1. **Redistributions of source code must retain** the above copyright notice, this list of conditions, and the following disclaimer.
   2. **Redistributions in binary form must reproduce** the above copyright notice, this list of conditions, and the following disclaimer in the documentation and/or other materials provided with the distribution.
 
-This software is provided "as is" without any express or implied warranties, including, but not limited to, implied warranties of merchantability or fitness for a particular purpose.
+This software is provided "as is" without any express or implied warranties, including, but not limited to, implied warranties of merchantability or fitness for a particular purpose. See the [LICENSE](LICENSE) file for more details.
