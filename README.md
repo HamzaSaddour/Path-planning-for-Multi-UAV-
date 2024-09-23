@@ -102,7 +102,7 @@ The resulting 3D occupancy maps and UAV scenarios can be found in [maps](maps) T
 
 ### Multi-UAV Path Planning 
 
-Further detqlis on the project can be found in [MultiUAV Path Planning for Urban Air Mobility](MultiUAV Path Planning for Urban Air Mobility)
+Further detalis on the project can be found in [MultiUAV Path Planning for Urban Air Mobility](MultiUAV Path Planning for Urban Air Mobility.pdf)
 
 
 ### Software
