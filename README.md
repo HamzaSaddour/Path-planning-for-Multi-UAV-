@@ -41,7 +41,7 @@ to optimise UAV flight paths. Simulation results demonstrate that the improved R
 reduces path planning time and produces more optimised paths for UAVs. The improved single
 UAV path planning algorithm was extended to generate paths for multiple UAVs. An original editing algorithm was proposed for multi-UAV path planning, designed to maintain a minimum safety
 distance between UAVs throughout their trajectories. This is achieved by placing pseudo-obstacles
-and locally replanning path segments where potential collisions are detected. The algorithm’s performance was validated in two distinct real-world urban environments.
+and locally replanning path segments where potential collisions are detected. The algorithm’s performance was validated in two distinct real-world urban environments.<br>
 **Keywords**: Unmanned Aerial Vehicle (UAV); multi-UAV; Path Planning; Collision avoidance;
 RRT*
 
@@ -136,20 +136,27 @@ shortest path(d). Finally, the path was smoothed to align with UAV dynamics (e).
 When planning for multiple UAVs, an additional complexity arises : maintaining the required safety 
 distance between them. To avoid any potential collision, the following path-editing algorithm is applied :
 
+<p align="center">
+  <img src="Figures/algo_diagram.png" alt="algo" width="500"/>
+</p>
 
-
-Further detalis on the project can be found in [MultiUAV Path Planning for Urban Air Mobility](MultiUAV Path Planning for Urban Air Mobility.pdf)
-
-
-### Software
-- MATLAB
-
-### Workflow
+Further details on the project can be found in [MultiUAV Path Planning for Urban Air Mobility](MultiUAV_Path_Planning_for_Urban_Air_Mobility.pdf)
 
 ## Results
+As shown below, after applying the two stages of the algorithm—initial path planning and path editing—each UAV maintains the required safety distance from all other UAVs at every time step of its trajectory.
 
+<table>
+  <tr>
+    <td align="center">
+      <img src="Figures/Multi_UAVs_Paths/8_UAVs_NYC_original.png" alt="full map sampling range" width="300"/><br>
+      (a) Initial Paths
+    </td>
+    <td align="center">
+      <img src="Figures/Multi_UAVs_Paths/8_UAVs_NYC_corrected.png" alt="reduced sampling range" width="300"/><br>
+      (b) Edited Paths
+    </td>
 
-### Figures and plots
+</table>
 
 
 ## Conclusion and Future Scope
@@ -169,8 +176,7 @@ Additionally, the current implementation of the algorithm is computationally exp
 
 
 ## Acknowledgements
-I would like to express my gratitude to Dr Martina Sciola and Dr Roberto Valenti for their invaluable guidance throughout
-this project. Special thanks to all contributors and supporters who made this project possible.
+ I would like to express my gratitude to Dr Giordano Scarciotti, Dr Martina Sciola and Dr Roberto Valenti for their invaluable guidance throughout this project. Special thanks to all contributors and supporters who made this project possible.
 
 ## Copyright Declaration and License 
 The copyright of this project rests with the author and is made available under a [Creative Commons Attribution Non-Commercial No Derivatives](https://creativecommons.org/licenses/by-nc-nd/4.0/) license. Researchers are free to copy, distribute, or transmit the work under the following conditions:
