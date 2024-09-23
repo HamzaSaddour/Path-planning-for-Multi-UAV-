@@ -155,7 +155,17 @@ As shown below, after applying the two stages of the algorithm—initial path pl
       <img src="Figures/Multi_UAVs_Paths/8_UAVs_NYC_corrected.png" alt="reduced sampling range" width="300"/><br>
       (b) Edited Paths
     </td>
-
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="Figures/Multi_UAVs_Paths/distances_plot_original_paths.png" alt="pruned path" width="300"/><br>
+      (c)Initial Paths
+    </td>
+    <td align="center">
+      <img src="Figures/Multi_UAVs_Paths/distances_plot_corrected_paths.png" alt="shortest path" width="300"/><br>
+      (d) Edited Paths
+    </td>
+  </tr>
 </table>
 
 
