@@ -3,13 +3,12 @@
 ## Table of Contents
 - [Introduction](#introduction)
 - [Abstract](#abstract)
-- [Installation](#installation)
 - [Usage](#usage)
 - [Methodology](#methodology)
 - [Results](#results)
 - [Conclusion and Future Scope](#conclusion-and-future-scope)
 - [Acknowledgements](#acknowledgements)
-- [License](#license)
+- [License](#copyright_declaration_and_license)
 
 ## List of Acronyms
 
@@ -25,7 +24,7 @@ actions, time efficiency and low cost [2]. Motion planning represents a fundamen
 Vehicles (UAVs). While significant progress has been made in addressing the challenges of UAV path planning, much of the existing research focuses on simplified
 scenarios rather than real-world urban environments. Additionally, most studies do not consider
 scenarios involving multiple UAVs, and those that do often rely on real-time, reactive avoidance
-rather than pre-planned, offline algorithms. To this end, this thesis presents a framework for 3D
+rather than pre-planned, offline algorithms. To this end, this project presents a framework for 3D
 path planning in urban environments for multiple UAVs. This work is distinguished by introducing a new RRT*-based collision-free path planning algorithm for multiple UAVs implemented on
 real-world urban maps.
 ## Abstract
@@ -44,20 +43,6 @@ distance between UAVs throughout their trajectories. This is achieved by placing
 and locally replanning path segments where potential collisions are detected. The algorithm’s performance was validated in two distinct real-world urban environments.<br>
 **Keywords**: Unmanned Aerial Vehicle (UAV); multi-UAV; Path Planning; Collision avoidance;
 RRT*
-
-## Installation
-To set up the project, follow these steps:
-
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/your-username/robust-visual-slam.git
-    ```
-2. Navigate to the project directory:
-    ```bash
-    cd robust-visual-slam
-    ```
-3. Install the required software:
-    - MATLAB
 
 ## Usage
 
@@ -78,7 +63,7 @@ To set up the project, follow these steps:
 3. **Open Folder in MATLAB:**
    Open the extracted folder in MATLAB.
 
-4. Run the Demo file and follow the instructions to generate paths as shown in the following figures :
+4. Run the Demo file and follow the instructions to generate paths, as shown in the following figures:
 <p align="center">
   <img src="Figures/Demo/Demo_1.png" alt="1" width="200"/>
   <img src="Figures/Demo/Demo_2.png" alt="2" width="200"/>
@@ -186,7 +171,7 @@ Additionally, the current implementation of the algorithm is computationally exp
 
 
 ## Acknowledgements
- I would like to express my gratitude to Dr Giordano Scarciotti, Dr Martina Sciola and Dr Roberto Valenti for their invaluable guidance throughout this project. Special thanks to all contributors and supporters who made this project possible.
+ I would like to express my gratitude to Dr Giordano Scarciotti, Dr Martina Sciola and Dr Roberto Valenti for their invaluable guidance throughout this project.
 
 ## Copyright Declaration and License 
 The copyright of this project rests with the author and is made available under a [Creative Commons Attribution Non-Commercial No Derivatives](https://creativecommons.org/licenses/by-nc-nd/4.0/) license. Researchers are free to copy, distribute, or transmit the work under the following conditions:
@@ -204,3 +189,10 @@ Additionally, this project is licensed under the [BSD 2-Clause License](LICENSE)
   2. **Redistributions in binary form must reproduce** the above copyright notice, this list of conditions, and the following disclaimer in the documentation and/or other materials provided with the distribution.
 
 This software is provided "as is" without any express or implied warranties, including, but not limited to, implied warranties of merchantability or fitness for a particular purpose. See the [LICENSE](LICENSE) file for more details.
+
+## References : 
+ [1] S. A. H. Mohsan, M. A. Khan, F. Noor, I. Ullah, and M. H. Alsharif, “Towards the unmanned
+ aerial vehicles (uavs): A comprehensive review,” Drones, vol. 6, no. 6,-06-15 2022. doi:
+ 10.3390/drones6060147.<br>
+ [2] G. Skorobogatov, C. Barrado, and E. Salamí, “Multiple uav systems: A survey,” Unmanned
+ Systems, vol. 08, no. 02, p. 149,-04-02 2020. doi: 10.1142/s2301385020500090.
