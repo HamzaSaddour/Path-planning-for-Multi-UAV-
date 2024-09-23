@@ -70,6 +70,8 @@ RRT*
   <img src="Figures/Demo/Demo_3.png" alt="3" width="200"/>
   <img src="Figures/Demo/Demo_3_results.png" alt="4" width="200"/>
 </p>
+A demo video is available at this link:
+[Demo](https://drive.google.com/file/d/1d6Uj0bpn7JgXMAYRUqlQgo-sADV6is_b/view?usp=sharing)
 
     
 ## Methodology
