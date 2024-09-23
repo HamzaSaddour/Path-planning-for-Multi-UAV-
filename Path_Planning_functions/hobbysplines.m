@@ -1,3 +1,5 @@
+%Copyright (c) 2013, Will Robertson
+%All rights reserved.
 function smoothed_path=hobbysplines(points,varargin)
 %HOBBYSPLINES Draws open or closed smooth curves from keypoints
 %
