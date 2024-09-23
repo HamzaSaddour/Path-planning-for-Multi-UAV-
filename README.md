@@ -99,8 +99,44 @@ Two urban areas, New York City and London, were selected for testing and impleme
 
 The resulting 3D occupancy maps and UAV scenarios can be found in [maps](maps) To get the 3D occupancy map and the UAV scen for a different area, use the function [Get_3DPathPlanningEnv](maps/Get_3DPathPlanningEnv.m). 
 ### Single UAV Path Planning 
+Several improvements were made to achieve an optimised UAV path frpm the RRT\* algorithm.
+As shown in figures (a) and (b), computational effort, linked to the size of the random tree, was reduced by 
+restricting the sampling range to a variable rectangle based on the start and target points. Redundant 
+waypoints were removed (c), and the process was repeated with different random seeds to find the 
+shortest path(d). Finally, the path was smoothed to align with UAV dynamics (e). The improved RRT\* algorithm can be found in the function [One_Path_Planning](Path_Planning_Functions/One_path_planning.m). 
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="Figures/Improved_RRT*/non-restricted.png" alt="non-restricted" width="200"/><br>
+      (a) Full Map Sampling Range
+    </td>
+    <td align="center">
+      <img src="Figures/Improved_RRT*/restricted.png" alt="restricted" width="200"/><br>
+      (b) Reduced Sampling Range
+    </td>
+    <td align="center">
+      <img src="Figures/Improved_RRT*/Pruned path.png" alt="Pruned path" width="200"/><br>
+      (c) Pruned Path
+    </td>
+    <td align="center">
+      <img src="Figures/Improved_RRT*/shortest_path_e.png" alt="shortest_path_e" width="200"/><br>
+      (d) Shortest Path
+    </td>
+    <td align="center">
+      <img src="Figures/Improved_RRT*/smoothed_path.png" alt="smoothed_path" width="200"/><br>
+      (e) Smoothed Path
+    </td>
+  </tr>
+</table>
+   
+
 
 ### Multi-UAV Path Planning 
+When planning for multiple UAVs, an additional complexity arises : maintaining the required safety 
+distance between them. To avoid any potential collision, the following path-editing algorithm is applied :
+
+
 
 Further detalis on the project can be found in [MultiUAV Path Planning for Urban Air Mobility](MultiUAV Path Planning for Urban Air Mobility.pdf)
 
