@@ -166,11 +166,11 @@ The animation below demonstrates a simulation of the path planning algorithm app
 <table>
   <tr>
     <td align="center">
-      <img src="Figures/Results/results_up.gif" alt="full map sampling range" width="300"/><br>
+      <img src="Figures/Results/results_up.gif" alt="full map sampling range" width="500"/><br>
       (a)
     </td>
     <td align="center">
-      <img src="Figures/Results/results_2.gif" alt="full map sampling range" width="300"/><br>
+      <img src="Figures/Results/results_1.gif" alt="full map sampling range" width="500"/><br>
       (b)
     </td>
   </tr>
