@@ -133,6 +133,7 @@ distance between them. To avoid any potential collision, the following path-edit
 Further details on the project can be found in [MultiUAV Path Planning for Urban Air Mobility](MultiUAV_Path_Planning_for_Urban_Air_Mobility.pdf)
 
 ## Results
+### NYC
 As shown below, after applying the two stages of the algorithm—initial path planning and path editing—each UAV maintains the required safety distance from all other UAVs at every time step of its trajectory.
 
 <table>
@@ -158,6 +159,23 @@ As shown below, after applying the two stages of the algorithm—initial path pl
   </tr>
 </table>
 
+
+### ICL
+The animation below demonstrates a simulation of the path planning algorithm applied to 5 UAVs navigating the ICL map: 
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="Figures/Results/results_up.gif" alt="full map sampling range" width="300"/><br>
+      (a)
+    </td>
+    <td align="center">
+      <img src="Figures/Results/results_2.gif" alt="full map sampling range" width="300"/><br>
+      (b)
+    </td>
+  </tr>
+
+</table>
 
 ## Conclusion and Future Scope
 
