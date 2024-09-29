@@ -1,7 +1,8 @@
 %demo
 %loading the 3D occupancy map
-addpath('PathPlanning');
-a=load("ICL_inflated_10.mat");%a=load("maps\NYC_05_inflated10.mat"); % 
+addpath('Path_Planning_functions');
+addpath('maps');
+a=load("maps\ICL_inflated_10.mat");%a=load("maps\NYC_05_inflated10.mat"); % 
 map3D=a.map3D_t;
 map3D.OccupiedThreshold = 0.51; 
 map3D.FreeThreshold = 0.5;
@@ -74,22 +75,22 @@ for i = 1:nb_UAVs
 end
 legend([l(:); t(:)]);
 planning_time=toc
+%%
 %plotting seperatio plot - Initial
 
 waypoints = get_waypoints(paths);
 numUAVs = size(waypoints, 2) / 3;
 numTimeSteps = size(waypoints, 1);% Number of time steps
 hold off
-
-% Initialize a figure
 figure;
 hold on;
 for i = 1:numUAVs
     
     for j = i+1:numUAVs
         % Extract the coordinates for UAV i and UAV j
-        uav_i_coords = waypoints(:, (i-1)*3 + 1:i*3);
-        uav_j_coords = waypoints(:, (j-1)*3 + 1:j*3);
+        n= min(size(paths{i},1),size(paths{j},1));
+        uav_i_coords = waypoints(1:n, (i-1)*3 + 1:i*3);
+        uav_j_coords = waypoints(1:n, (j-1)*3 + 1:j*3);
         
         % Calculate the Euclidean distance between UAV i and UAV j at each time step
         distances = sqrt(sum((uav_i_coords - uav_j_coords).^2, 2));
@@ -121,15 +122,15 @@ edited_scene=copy(scene);
 tic
 for i = 1:nb_UAVs-1
     disp("editing UAV n° "+num2str(i))
-    [e_paths{i},ss,sv]=edit_trajectory(i,waypoints,ss,map3D,UAVs_speed(i),time_step,edited_scene,e_paths,safety_distance);%
-    waypoints = get_waypoints(e_paths);
+    [e_paths{i},ss,sv]=edit_trajectory(i,map3D,UAVs_speed(i),time_step,edited_scene,e_paths,safety_distance);%(UAV,map3D,UAV_speed,time_step,scene,paths_,safety_distance)
 
-    path=e_paths{i};
-    d = zeros(size(path,1)-1,1);
-    for j = 2:size(path,1)
-        d(j) = norm(path(j,1:3) - path(j-1,1:3));
-    end
-    e_distance{i} =d;
+    %uncomment to check the distance travelled during each time step
+    % path=e_paths{i};
+    % d = zeros(size(path,1)-1,1);
+    % for j = 2:size(path,1)
+    %     d(j) = norm(path(j,1:3) - path(j-1,1:3));
+    % end
+    % e_distance{i} =d;
 
 end
 editing_time = toc
@@ -202,8 +203,9 @@ for i = 1:numUAVs
     
     for j = i+1:numUAVs
         % Extract the coordinates for UAV i and UAV j
-        uav_i_coords = waypoints(:, (i-1)*3 + 1:i*3);
-        uav_j_coords = waypoints(:, (j-1)*3 + 1:j*3);
+        n= min(size(e_paths{i},1),size(e_paths{j},1));
+        uav_i_coords = waypoints(1:n, (i-1)*3 + 1:i*3);
+        uav_j_coords = waypoints(1:n, (j-1)*3 + 1:j*3);
         
         % Calculate the Euclidean distance between UAV i and UAV j at each time step
         distances = sqrt(sum((uav_i_coords - uav_j_coords).^2, 2));
