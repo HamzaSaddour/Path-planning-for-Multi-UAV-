@@ -100,23 +100,23 @@ shortest path(d). Finally, the path was smoothed to align with UAV dynamics (e).
 <table>
   <tr>
     <td align="center">
-      <img src="Figures/Improved_RRT*/non-restricted.png" alt="non-restricted" width="200"/><br>
+      <img src="Figures/Improved_RRT*/non-restricted.png" alt="non-restricted" width="400"/><br>
       (a) Full Map Sampling Range
     </td>
     <td align="center">
-      <img src="Figures/Improved_RRT*/restricted.png" alt="restricted" width="200"/><br>
+      <img src="Figures/Improved_RRT*/restricted.png" alt="restricted" width="400"/><br>
       (b) Reduced Sampling Range
     </td>
     <td align="center">
-      <img src="Figures/Improved_RRT*/Pruned path.png" alt="Pruned path" width="200"/><br>
+      <img src="Figures/Improved_RRT*/Pruned path.png" alt="Pruned path" width="400"/><br>
       (c) Pruned Path
     </td>
     <td align="center">
-      <img src="Figures/Improved_RRT*/shortest_path_e.png" alt="shortest_path_e" width="200"/><br>
+      <img src="Figures/Improved_RRT*/shortest_path_e.png" alt="shortest_path_e" width="400"/><br>
       (d) Shortest Path
     </td>
     <td align="center">
-      <img src="Figures/Improved_RRT*/smoothed_path.png" alt="smoothed_path" width="200"/><br>
+      <img src="Figures/Improved_RRT*/smoothed_path.png" alt="smoothed_path" width="400"/><br>
       (e) Smoothed Path
     </td>
   </tr>
