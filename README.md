@@ -87,13 +87,15 @@ Two urban areas, New York City and London, were selected for testing and impleme
   <img src="maps/Figures/lidar_ICL.gif" alt="a" width="400"/>
   <img src="maps/Figures/Omap_ICL.gif" alt=" B" width="400"/>
 </p>
+
 The resulting 3D occupancy maps and UAV scenarios can be found in [maps](maps) To get the 3D occupancy map and the UAV scen for a different area, use the function [Get_3DPathPlanningEnv](maps/Get_3DPathPlanningEnv.m). 
+
 ### Single UAV Path Planning 
 Several improvements were made to achieve an optimised UAV path frpm the RRT\* algorithm.
 As shown in figures (a) and (b), computational effort, linked to the size of the random tree, was reduced by 
 restricting the sampling range to a variable rectangle based on the start and target points. Redundant 
 waypoints were removed (c), and the process was repeated with different random seeds to find the 
-shortest path(d). Finally, the path was smoothed to align with UAV dynamics (e). The improved RRT\* algorithm can be found in the function [One_Path_Planning](Path_Planning_Functions/One_path_planning.m). 
+shortest path(d). Finally, the path was smoothed to align with UAV dynamics (e). The improved RRT\* algorithm can be found in the function [One_Path_Planning (Path_Planning_functions/One_path_planning.m) . 
 
 <table>
   <tr>
@@ -166,11 +168,11 @@ The animation below demonstrates a simulation of the path planning algorithm app
 <table>
   <tr>
     <td align="center">
-      <img src="Figures/Results/results_up.gif" alt="full map sampling range" width="500"/><br>
+      <img src="Figures/Results/results_up.gif" alt="full map sampling range" width="400"/><br>
       (a)
     </td>
     <td align="center">
-      <img src="Figures/Results/results_1.gif" alt="full map sampling range" width="500"/><br>
+      <img src="Figures/Results/results_1.gif" alt="full map sampling range" width="400"/><br>
       (b)
     </td>
   </tr>
