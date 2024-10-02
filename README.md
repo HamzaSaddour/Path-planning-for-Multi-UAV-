@@ -63,7 +63,7 @@ RRT*
 3. **Open Folder in MATLAB:**
    Open the extracted folder in MATLAB.
 
-4. Run the Demo file and follow the instructions to generate paths, as shown in the following figures:
+4. Run the [Demo](Demo.mlx) file and follow the instructions to generate paths, as shown in the following figures:
 <p align="center">
   <img src="Figures/Demo/Demo_1.png" alt="1" width="200"/>
   <img src="Figures/Demo/Demo_2.png" alt="2" width="200"/>
