@@ -199,15 +199,7 @@ Additionally, the current implementation of the algorithm is computationally exp
  I would like to express my gratitude to Dr Giordano Scarciotti, Dr Martina Sciola and Dr Roberto Valenti for their invaluable guidance throughout this project.
 
 ## Copyright Declaration and License 
-The copyright of this project rests with the author and is made available under a [Creative Commons Attribution Non-Commercial No Derivatives](https://creativecommons.org/licenses/by-nc-nd/4.0/) license. Researchers are free to copy, distribute, or transmit the work under the following conditions:
-
-- **Attribution**: You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so reasonably, but not in any way that suggests the author endorses you or your use.
-- **Non-Commercial**: You may not use the material commercially.
-- **No Derivatives**: You may not distribute the modified material if you remix, transform, or build upon it.
-
-For any reuse or redistribution, researchers must clearly state the terms of this license.
-
-Additionally, this project is licensed under the [BSD 2-Clause License](LICENSE). The terms are as follows:
+This project is licensed under the [BSD 2-Clause License](LICENSE). The terms are as follows:
 
 - **Redistribution and use** in source and binary forms, with or without modification, are permitted, provided that the following conditions are met:
   1. **Redistributions of source code must retain** the above copyright notice, this list of conditions, and the following disclaimer.
